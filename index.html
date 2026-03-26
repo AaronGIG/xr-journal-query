@@ -134,13 +134,20 @@ body{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Pin
 .btt.show{opacity:1;transform:translateY(0)}
 .btt:hover{background:var(--primary);color:#fff;border-color:var(--primary);box-shadow:0 4px 14px var(--primary-glow)}
 
-.footer{max-width:660px;margin:0 auto;padding:20px 20px 36px;text-align:center;font-size:12px;color:var(--text3);line-height:2}
+.recommend{max-width:660px;margin:0 auto;padding:0 16px}
+.rec-card{background:linear-gradient(135deg,#f0f9ff 0%,#e0f2fe 100%);border:1px solid #bae6fd;border-radius:var(--radius);padding:20px 24px;display:flex;align-items:center;gap:20px;transition:all 0.2s;text-decoration:none;color:var(--text)}
+.rec-card:hover{box-shadow:var(--shadow-md);border-color:#7dd3fc;transform:translateY(-1px)}
+.rec-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#0284c7,#0ea5e9);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(14,165,233,0.25)}
+.rec-body{flex:1;min-width:0}
+.rec-title{font-size:14px;font-weight:600;color:var(--text)}
+.rec-desc{font-size:12px;color:var(--text2);margin-top:3px;line-height:1.5}
+.rec-arrow{color:var(--text3);flex-shrink:0;transition:transform 0.2s}
+.rec-card:hover .rec-arrow{transform:translateX(3px);color:var(--primary)}
+
+.footer{max-width:660px;margin:0 auto;padding:16px 20px 36px;text-align:center;font-size:12px;color:var(--text3);line-height:2}
 .footer a{color:var(--text2);text-decoration:none;font-weight:500;transition:color 0.2s}
 .footer a:hover{color:var(--primary)}
 .footer .sep{margin:0 8px;opacity:0.3}
-.footer .promo{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;background:var(--card);border:1px solid var(--border);border-radius:20px;margin-top:8px;font-size:12px;color:var(--text2);transition:all 0.2s}
-.footer .promo:hover{border-color:var(--primary);color:var(--primary);box-shadow:var(--shadow)}
-.footer .promo svg{opacity:0.6}
 
 .loading{text-align:center;padding:60px}.spinner{display:inline-block;width:36px;height:36px;border:3px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin 0.7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -259,14 +266,23 @@ body{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Pin
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m18 15-6-6-6 6"/></svg>
 </div>
 
+<div class="recommend" id="recCard" style="display:none">
+  <a class="rec-card" href="https://github.com/AaronGIG/pdf2zh-desktop" target="_blank" rel="noopener">
+    <div class="rec-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M10 13h4"/><path d="M10 17h4"/></svg>
+    </div>
+    <div class="rec-body">
+      <div class="rec-title">查到期刊了？下一步：读外文论文</div>
+      <div class="rec-desc">pdf2zh-desktop — 免费开源 PDF 翻译工具，保留原排版，公式无损，解压即用</div>
+    </div>
+    <svg class="rec-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+  </a>
+</div>
+
 <div class="footer">
   数据来源：<a href="https://www.xr-scholar.com" target="_blank" rel="noopener">xr-scholar.com</a>
   <span class="sep">|</span>本工具仅供学术参考，不构成评价建议
-  <br>
-  <a class="promo" href="https://github.com/AaronGIG/pdf2zh-desktop" target="_blank" rel="noopener">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 .1.8 2.8.1 3.5.7-.4 1-.9 1.1-1.8-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17 6.5 18 6.8 18 6.8c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .3"/></svg>
-    免费开源 PDF 翻译工具 pdf2zh-desktop
-  </a>
+  <span class="sep">|</span>同作者出品：<a href="https://github.com/AaronGIG/pdf2zh-desktop" target="_blank" rel="noopener">pdf2zh-desktop</a>
 </div>
 
 <script>
@@ -385,7 +401,7 @@ function doFilter(){
   // Update dynamic stats
   updateStats(filtered);
 
-  shown=0;$r.innerHTML='';
+  shown=0;$r.innerHTML='';document.getElementById('recCard').style.display='none';
   let infoHtml=qlClean||fCat||fTier||fTop
     ?'找到 '+filtered.length.toLocaleString()+' 本期刊'
     :'共 '+filtered.length.toLocaleString()+' 本期刊';
@@ -434,6 +450,10 @@ function renderMore(){
     h+='</div></div>';
   }
   $r.insertAdjacentHTML('beforeend',h);shown=end;busy=false;
+  // Show recommend card when all results loaded
+  const $rec=document.getElementById('recCard');
+  if(shown>=filtered.length&&filtered.length>0){$rec.style.display=''}
+  else{$rec.style.display='none'}
 }
 
 // Infinite scroll
